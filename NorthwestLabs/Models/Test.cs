@@ -23,5 +23,7 @@ namespace NorthwestLabs.Models
 
         [Display(Name = "Base Cost")]
         public double baseCost { get; set; }
+
+        public virtual ICollection<Test_Assay> Test_Assay { get; set; }
     }
 }

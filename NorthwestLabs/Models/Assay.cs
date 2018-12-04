@@ -15,6 +15,9 @@ namespace NorthwestLabs.Models
         [HiddenInput(DisplayValue = false)]
         public int AssayID { get; set; }
 
+        [Display(Name = "Description")]
         public string assayDescription { get; set; }
+
+        public virtual ICollection<Test_Assay> Test_Assay { get; set; }
     }
 }
