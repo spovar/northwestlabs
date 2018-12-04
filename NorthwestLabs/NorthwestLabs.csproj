@@ -179,6 +179,7 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Assay.cs" />
+    <Compile Include="Models\CompoundsController.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Materials_Tests.cs" />
@@ -298,6 +299,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Graphics\" />
+    <Folder Include="Views\Compounds\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
