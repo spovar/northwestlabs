@@ -9,6 +9,7 @@ namespace NorthwestLabs.DAL
 {
     public class NorthwestLabsContext : DbContext
     {
+        //Context page setting DBSets to connection string
         public NorthwestLabsContext() : base("DefaultConnection")
         {
 

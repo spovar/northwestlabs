@@ -6,6 +6,8 @@ using System.Web.Mvc;
 
 namespace NorthwestLabs.Controllers
 {
+    //Alec Bawden, Isaac McDougal, Sam Povar, Kevin Nelson
+    //Intex project
     public class HomeController : Controller
     {
         public ActionResult Index()
