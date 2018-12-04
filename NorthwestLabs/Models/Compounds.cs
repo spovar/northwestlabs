@@ -13,6 +13,7 @@ namespace NorthwestLabs.Models
     {
 
         [Key]
+        [HiddenInput(DisplayValue = false)]
         public int LTNumber { get; set; }
 
         public float molecularMass { get; set; }
