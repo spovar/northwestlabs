@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NorthwestLabs.Models;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -8,9 +9,11 @@ namespace NorthwestLabs.DAL
 {
     public class NorthwestLabsContext : DbContext
     {
-        public NorthwestLabsContext() : base("DefaultContext")
+        public NorthwestLabsContext() : base("DefaultConnection")
         {
 
         }
+
+        public DbSet<Material> Materials { get; set; }
     }
 }

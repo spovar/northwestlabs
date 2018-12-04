@@ -1,0 +1,34 @@
+﻿@model NorthwestLabs.Models.Material
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Material</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.materialsDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.materialsDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.materialsCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.materialsCost)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaterialsID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
