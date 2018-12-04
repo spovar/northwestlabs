@@ -11,7 +11,7 @@ namespace NorthwestLabs.Models
         public Assay Assays = new Assay();
 
         public int TestID;
-        public Test Tests = new Tests();
+        public Test Tests = new Test();
         public bool? required;
     }
 }
