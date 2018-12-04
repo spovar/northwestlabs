@@ -12,6 +12,7 @@ namespace NorthwestLabs.Models
 
         public int TestID;
         public Test Tests = new Test();
+
         public bool? required;
     }
 }
