@@ -17,8 +17,9 @@ namespace NorthwestLabs.Models
         // GET: Test_Assay
         public ActionResult Index()
         {
+            var materials = db.Materials;
             var test_Assay = db.Test_Assay.Include(t => t.Assays).Include(t => t.Tests);
-            return View(test_Assay.ToList());
+            return View(Tuple.Create(test_Assay.ToList(), materials.ToList()));
         }
 
         // GET: Test_Assay/Details/5
