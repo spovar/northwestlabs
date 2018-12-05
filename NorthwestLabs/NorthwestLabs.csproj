@@ -173,6 +173,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MaterialsController.cs" />
+    <Compile Include="Controllers\Test_AssayController.cs" />
     <Compile Include="DAL\NorthwestLabsContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -288,6 +289,11 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Test_Assay\Create.cshtml" />
+    <Content Include="Views\Test_Assay\Delete.cshtml" />
+    <Content Include="Views\Test_Assay\Details.cshtml" />
+    <Content Include="Views\Test_Assay\Edit.cshtml" />
+    <Content Include="Views\Test_Assay\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
