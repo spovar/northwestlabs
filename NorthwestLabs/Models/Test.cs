@@ -23,5 +23,8 @@ namespace NorthwestLabs.Models
 
         [Display(Name = "Base Cost")]
         public double baseCost { get; set; }
+
+        public ICollection<Assay> assays { get; set; }
+        public ICollection<Material> materials { get; set; }
     }
 }

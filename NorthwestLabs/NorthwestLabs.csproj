@@ -184,6 +184,8 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Material.cs" />
+    <Compile Include="Models\Materials_Tests.cs" />
+    <Compile Include="Models\Work_Order.cs" />
     <Compile Include="Models\Test.cs" />
     <Compile Include="Models\Test_Assay.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -289,14 +291,11 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\Shared\_SalesNav.cshtml" />
-    <Content Include="Views\Test_Assay\Index.cshtml" />
-    <Content Include="Views\Test_Assay\Edit.cshtml" />
-    <Content Include="Views\Test_Assay\Details.cshtml" />
-    <Content Include="Views\Test_Assay\Delete.cshtml" />
     <Content Include="Views\Test_Assay\Create.cshtml" />
-    <Content Include="Views\Shared\_AdminNav.cshtml" />
-    <Content Include="Views\Shared\_CustNav.cshtml" />
+    <Content Include="Views\Test_Assay\Delete.cshtml" />
+    <Content Include="Views\Test_Assay\Details.cshtml" />
+    <Content Include="Views\Test_Assay\Edit.cshtml" />
+    <Content Include="Views\Test_Assay\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
