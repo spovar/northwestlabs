@@ -1,16 +1,18 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-@using Microsoft.AspNet.Identity
-@if (Request.IsAuthenticated)
-{
-    <h2>Welcome @User.Identity.GetUserName()!</h2>
-    <br />
-}
-else
-{ }
+
 <div class="jumbotron" id="homejumbo">
-    <p align="left" class="myhead">We are <span style="font-size:210px; line-height:100%">Northwest Labs.</span></p>
+    @using Microsoft.AspNet.Identity
+    @if (Request.IsAuthenticated)
+    {
+        <p align="left" class="myhead" style="margin-top:0px;"><span style="font-size:30px; line-height:50%;">Hello @User.Identity.GetUserName(),<br /><br /></span> We are <span style="font-size:210px; line-height:100%">Northwest Labs.</span></p>
+    }
+    else
+    {
+        <p align="left" class="myhead" style="margin-top:0px;"> <br /><br />We are <span style="font-size:210px; line-height:100%">Northwest Labs.</span></p>
+    }
+
 
 
 

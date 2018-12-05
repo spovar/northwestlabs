@@ -189,6 +189,7 @@ p {font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .myhead {
+    line-height: 60%;
     margin-top: 0px;
     padding-top: 0px;
     font-size: 90px;
