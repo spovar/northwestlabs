@@ -4,6 +4,18 @@
     background-size:100%;
 }
 
+.bd_Contact {
+    padding-top: 0px;
+    background-image: url(../Graphics/back2.png);
+    background-size: 100%;
+}
+
+.bd_About {
+    padding-top: 0px;
+    background-image: url(../Graphics/back3.png);
+    background-size: 100%;
+}
+
 div{
     background-color:white;
 }
@@ -11,11 +23,13 @@ div{
 h2 {
     font-family: 'Century Gothic';
     font-weight: bold;
+    color: #196767;
 }
 
 h1 {
     font-family: 'Century Gothic';
     font-weight: bolder;
+    color: #0f3e3e;
 }
 
 a {
@@ -24,10 +38,16 @@ a {
     font-family: 'Century Gothic';
 }
 
+    a:hover {
+        color: #196767;
+        font-family: 'Century Gothic';
+        text-decoration:none;
+    }
+
 p {font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;}
 
 .footertext{
-    font-family:'Century Gothic', Gabriola;
+    font-family:''Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif', Gabriola;
     color: gray;
     font-style:italic;
 }
@@ -140,7 +160,9 @@ p {font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     .adnavsli:hover {
         background-color: #196767;
         color: white;
-        box-shadow: inset 0 -2px 2px rgba(41,163,163,.8); /*bottom internal shadow*/
+        box-shadow: 0 -1px 1px #666, /*top external shadow*/
+        inset 0 -2px 2px rgba(41,163,163,.8), /*bottom internal shadow*/
+        inset 0 2px 2px rgba(255,255,255,0.8); /*top internal highlight*/
     }
 
     .adnavsli a:hover {
@@ -164,4 +186,58 @@ p {font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     border-width: 5px;
     border-style: solid;
     box-shadow: 0 10px 15px rgba(41,163,163,.8); /*bottom internal shadow*/
+}
+
+.myhead {
+    margin-top: 0px;
+    padding-top: 0px;
+    font-size: 90px;
+    font-family: 'Century Gothic';
+    font-weight: bolder;
+    vertical-align: top;
+}
+
+.mymedhead {
+    font-family: 'Century Gothic';
+    font-weight: bold;
+    color: #196767;
+    font-size:100px;
+}
+
+.mylilhead {
+    font-family: 'Century Gothic';
+    font-weight: bold;
+    color: #196767;
+    font-size: 60px;
+}
+
+#homejumbo {
+    padding-top: 0px;
+    vertical-align: top;
+    background-color: #99e6e6;
+}
+
+.homepar{
+    font-size:30px;
+    font-family:'Trebuchet MS';
+    color:black;
+}
+
+.medpar {
+    padding-left: 20px;
+    padding: 40px;
+    background-color: #d6f5f5;
+}
+
+.whitepar {
+    padding: 40px;
+    
+}
+
+.contacttable{
+    width:100%;
+    padding:20px;
+    font-family:'Trebuchet MS';
+    font-size:24px;
+    align-content:center;
 }

@@ -1,48 +1,54 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    <h2>Welcome @User.Identity.GetUserName()!</h2>
+    <br />
+}
+else
+{ }
+<div class="jumbotron" id="homejumbo">
+    <p align="left" class="myhead">We are <span style="font-size:210px; line-height:100%">Northwest Labs.</span></p>
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+
+
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
+
+<div class="whitepar">
+    <p class="mymedhead">About Us</p>
+    <p class="homepar">
+        Northwest Labs Pharmaceutical provides chemical and compound tests for companies needing in-depth assay analysis.
+    </p>
+    <p><a class="btn btn-default btn-outline-dark" style ="font-size:25px;" href="@Url.Action("About", "Home")">Read more &raquo;</a></p>
 </div>
 
 <br />
 <br />
 <br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
+
+<div class="medpar" align="right">
+    <p class="mymedhead">Place an Order</p>
+    <p class="homepar">We have lab technicians ready to test your compounds, so <br /><em>Sign In</em> or <em>Register</em> to place an order today!</p>
+    <p><a class="btn btn-default btn-outline-dark" style="font-size:25px;" href="@Url.Action("Login", "Account") "> &laquo; Sign Up</a></p>
+    <br />
+    <br />
+</div>
+
 <br />
 <br />
 <br />
 
-v
+<div class="whitepar">
+    <p class="mymedhead">Contact Us</p>
+    <p class="homepar">Still have questions after searching our website resources?<br /> We have sales reps ready to help!</p>
+    <p><a class="btn btn-default btn-outline-dark" style ="font-size:25px;" href="@Url.Action("Contact", "Home")">Call Us &raquo;</a></p>
+  
+</div>
+
+<br />
+<br />
+<br />
+<br />

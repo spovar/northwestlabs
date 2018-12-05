@@ -14,7 +14,7 @@
     </style>
 </head>
 
-<body>
+<body class="bd_@ViewBag.Title">
 
     @using Microsoft.AspNet.Identity
     @if (Request.IsAuthenticated && User.Identity.GetUserName() == "admin@gmail.com")
@@ -23,28 +23,35 @@
         @Html.Partial("_AdminNav")
 
     }
+    else if (Request.IsAuthenticated && User.Identity.GetUserName() == "client@gmail.com")
+    {
+        @Html.Partial("_CustNav")
+    }
+    else if (Request.IsAuthenticated && User.Identity.GetUserName() == "sales@gmail.com")
+    {
+        @Html.Partial("_SalesNav")
+    }
     else
     {
+        <div class="navbar-fixed-top mynavs">
 
-    @Html.Partial("_AdminNav");
+            <ul class="mynavsul">
+                <li class="mynavsimg" width="150"><img src="~/Graphics/logo.png" width="100" /></li>
+                <li class="mynavstitle">@Html.ActionLink("Northwest Labs", "Index", "Home")</li>
+                <li class="mynavsli">@Html.ActionLink("About", "About", "Home")</li>
+                <li class="mynavsli">@Html.ActionLink("Services", "About", "Home")</li>
+                <li class="mynavsli">@Html.ActionLink("Contact", "Contact", "Home")</li>
+                
+                <li class="mynavsli" style="float:right; margin-right:20px;">@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
 
-    <div class="navbar-fixed-top mynavs">
+            </ul>
 
-    <ul class="mynavsul">
-        <li class="mynavsimg" width="150"><img src="~/Graphics/logo.png" width="100" /></li>
-        <li class="mynavstitle">@Html.ActionLink("Northwest Labs", "Index", "Home")</li>
-        <li class="mynavsli">@Html.ActionLink("About", "About", "Home")</li>
-        <li class="mynavsli">@Html.ActionLink("Services", "About", "Home")</li>
-        <li class="mynavsli">@Html.ActionLink("Contact", "Contact", "Home")</li>
-        <li class="mynavsli" style="float:right; margin-right:20px;">@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
-
-    </ul>
-
-    </div>
+        </div>
     }
 
     <div class="container body-content">
         <br /><br /><p style="height:15px"></p>
+
         @RenderBody()
         <hr />
         <footer>
