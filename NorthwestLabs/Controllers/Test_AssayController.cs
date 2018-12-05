@@ -7,8 +7,9 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using NorthwestLabs.DAL;
+using NorthwestLabs.Models;
 
-namespace NorthwestLabs.Models
+namespace NorthwestLabs.Controllers
 {
     public class Test_AssayController : Controller
     {
@@ -17,9 +18,8 @@ namespace NorthwestLabs.Models
         // GET: Test_Assay
         public ActionResult Index()
         {
-            var materials = db.Materials;
             var test_Assay = db.Test_Assay.Include(t => t.Assays).Include(t => t.Tests);
-            return View(Tuple.Create(test_Assay.ToList(), materials.ToList()));
+            return View(test_Assay.ToList());
         }
 
         // GET: Test_Assay/Details/5
