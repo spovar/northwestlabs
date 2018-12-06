@@ -11,108 +11,108 @@ using NorthwestLabs.Models;
 
 namespace NorthwestLabs.Controllers
 {
-    [Authorize(Roles = "Admin")]
-    public class MaterialsController : Controller
+    [Authorize(Roles ="Admin")]
+    public class TestsController : Controller
     {
         private NorthwestLabsContext db = new NorthwestLabsContext();
 
-        // GET: Materials
+        // GET: Tests
         public ActionResult Index()
         {
-            return View(db.Materials.ToList());
+            return View(db.Tests.ToList());
         }
 
-        // GET: Materials/Details/5
+        // GET: Tests/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Material material = db.Materials.Find(id);
-            if (material == null)
+            Test test = db.Tests.Find(id);
+            if (test == null)
             {
                 return HttpNotFound();
             }
-            return View(material);
+            return View(test);
         }
 
-        // GET: Materials/Create
+        // GET: Tests/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Materials/Create
+        // POST: Tests/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MaterialsID,materialsDescription,materialsCost")] Material material)
+        public ActionResult Create([Bind(Include = "TestID,testName,estimatedDays,baseCost")] Test test)
         {
             if (ModelState.IsValid)
             {
-                db.Materials.Add(material);
+                db.Tests.Add(test);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(material);
+            return View(test);
         }
 
-        // GET: Materials/Edit/5
+        // GET: Tests/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Material material = db.Materials.Find(id);
-            if (material == null)
+            Test test = db.Tests.Find(id);
+            if (test == null)
             {
                 return HttpNotFound();
             }
-            return View(material);
+            return View(test);
         }
 
-        // POST: Materials/Edit/5
+        // POST: Tests/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MaterialsID,materialsDescription,materialsCost")] Material material)
+        public ActionResult Edit([Bind(Include = "TestID,testName,estimatedDays,baseCost")] Test test)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(material).State = EntityState.Modified;
+                db.Entry(test).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(material);
+            return View(test);
         }
 
-        // GET: Materials/Delete/5
+        // GET: Tests/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Material material = db.Materials.Find(id);
-            if (material == null)
+            Test test = db.Tests.Find(id);
+            if (test == null)
             {
                 return HttpNotFound();
             }
-            return View(material);
+            return View(test);
         }
 
-        // POST: Materials/Delete/5
+        // POST: Tests/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Material material = db.Materials.Find(id);
-            db.Materials.Remove(material);
+            Test test = db.Tests.Find(id);
+            db.Tests.Remove(test);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

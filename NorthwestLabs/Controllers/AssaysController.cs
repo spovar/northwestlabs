@@ -30,12 +30,14 @@ namespace NorthwestLabs.Controllers
             return View(myAssays);
         }
 
+        [Authorize(Roles = "Admin")]
         // GET: Assays
         public ActionResult Index()
         {
             return View(db.Assays.ToList());
         }
 
+        [Authorize(Roles = "Admin")]
         // GET: Assays/Details/5
         public ActionResult Details(int? id)
         {
@@ -51,6 +53,7 @@ namespace NorthwestLabs.Controllers
             return View(assay);
         }
 
+        [Authorize(Roles = "Admin")]
         // GET: Assays/Create
         public ActionResult Create()
         {
@@ -60,6 +63,7 @@ namespace NorthwestLabs.Controllers
         // POST: Assays/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "AssayID,assayDescription")] Assay assay)
@@ -75,6 +79,7 @@ namespace NorthwestLabs.Controllers
         }
 
         // GET: Assays/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -92,6 +97,7 @@ namespace NorthwestLabs.Controllers
         // POST: Assays/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "AssayID,assayDescription")] Assay assay)
@@ -106,6 +112,7 @@ namespace NorthwestLabs.Controllers
         }
 
         // GET: Assays/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -121,6 +128,7 @@ namespace NorthwestLabs.Controllers
         }
 
         // POST: Assays/Delete/5
+        [Authorize(Roles = "Admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
