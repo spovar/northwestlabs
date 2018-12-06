@@ -7,6 +7,7 @@ namespace NorthwestLabs.Models
 {
     public class Work_Order
     {
+
         public int OrderID { get; set; }
         public int CustomerID { get; set; }
         public int LTNumber { get; set; }

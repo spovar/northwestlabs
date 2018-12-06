@@ -298,6 +298,11 @@
     <Content Include="Views\Test_Assay\Details.cshtml" />
     <Content Include="Views\Test_Assay\Edit.cshtml" />
     <Content Include="Views\Test_Assay\Index.cshtml" />
+    <Content Include="Views\Customers\Create.cshtml" />
+    <Content Include="Views\Customers\Delete.cshtml" />
+    <Content Include="Views\Customers\Details.cshtml" />
+    <Content Include="Views\Customers\Edit.cshtml" />
+    <Content Include="Views\Customers\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
