@@ -174,7 +174,6 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MaterialsController.cs" />
     <Compile Include="Controllers\Test_AssayController.cs" />
-    <Compile Include="Controllers\Work_OrderController.cs" />
     <Compile Include="DAL\NorthwestLabsContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -182,6 +181,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Assay.cs" />
     <Compile Include="Models\Compounds.cs" />
+    <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Employees.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -298,11 +298,7 @@
     <Content Include="Views\Test_Assay\Details.cshtml" />
     <Content Include="Views\Test_Assay\Edit.cshtml" />
     <Content Include="Views\Test_Assay\Index.cshtml" />
-    <Content Include="Views\Work_Order\Create.cshtml" />
-    <Content Include="Views\Work_Order\Delete.cshtml" />
-    <Content Include="Views\Work_Order\Details.cshtml" />
-    <Content Include="Views\Work_Order\Edit.cshtml" />
-    <Content Include="Views\Work_Order\Index.cshtml" />
+    <Content Include="Views\Home\Services.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
