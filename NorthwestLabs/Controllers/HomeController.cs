@@ -35,5 +35,13 @@ namespace NorthwestLabs.Controllers
 
             return View();
         }
+
+        [Authorize(Roles = "Admin")]
+        public ActionResult LabInfo()
+        {
+            ViewBag.Message = "Change Lab Information";
+
+            return View();
+        }
     }
 }

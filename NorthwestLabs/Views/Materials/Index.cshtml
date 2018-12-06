@@ -1,4 +1,4 @@
-﻿@model Tuple<IEnumerable<NorthwestLabs.Models.Test_Assay>,IEnumerable<NorthwestLabs.Models.Material>>
+﻿@model IEnumerable<NorthwestLabs.Models.Material>
 
 @{
     ViewBag.Title = "Index";
@@ -12,15 +12,15 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.item2.materialsDescription)
+            @Html.DisplayNameFor(model => model.materialsDescription)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.item2.materialsCost)
+            @Html.DisplayNameFor(model => model.materialsCost)
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model.Item2) {
+@foreach (var item in Model) {
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.materialsDescription)

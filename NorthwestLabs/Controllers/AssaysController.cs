@@ -15,6 +15,21 @@ namespace NorthwestLabs.Controllers
     {
         private NorthwestLabsContext db = new NorthwestLabsContext();
 
+
+        public ActionResult Catalog()
+        {
+            List<Assay> myAssays = db.Assays.ToList();
+
+            foreach (var assay in myAssays)
+            {
+                assay.tests = db.Database.SqlQuery<Test>("SELECT * FROM Test INNER JOIN Test_Assay ON Test.TestID = Test_Assay.TestID WHERE Test_Assay.AssayID = " + assay.AssayID);
+                ViewBag.materials = db.Database.SqlQuery<Material>("SELECT * FROM Materials");
+            }
+
+
+            return View(myAssays);
+        }
+
         // GET: Assays
         public ActionResult Index()
         {
@@ -123,20 +138,6 @@ namespace NorthwestLabs.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
-        }
-
-        public ActionResult Catalog()
-        {
-            List<Assay> myAssays = db.Assays.ToList();
-
-            foreach (var assay in myAssays)
-            {
-                assay.tests = db.Database.SqlQuery<Test>("SELECT * FROM Test INNER JOIN Test_Assay ON Test.TestID = Test_Assay.TestID WHERE Test_Assay.AssayID = " + assay.AssayID);
-                ViewBag.materials = db.Database.SqlQuery<Material>("SELECT * FROM Materials");
-            }
-
-
-            return View(myAssays);
         }
     }
 }
