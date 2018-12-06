@@ -7,8 +7,9 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using NorthwestLabs.DAL;
+using NorthwestLabs.Models;
 
-namespace NorthwestLabs.Models
+namespace NorthwestLabs.Controllers
 {
     public class Test_AssayController : Controller
     {

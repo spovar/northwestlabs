@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+
+    @foreach (var item in ViewBag.materials)
+    {
+        <tr>
+            <td>
+                @ViewBag.item.materialsDescription
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.MaterialsID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.MaterialsID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.MaterialsID })
+            </td>
+        </tr>
+    }
+
+</table>
