@@ -170,6 +170,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AssaysController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -285,6 +286,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Materials\Create.cshtml" />
+    <Content Include="Views\Materials\Delete.cshtml" />
+    <Content Include="Views\Materials\Details.cshtml" />
+    <Content Include="Views\Materials\Edit.cshtml" />
+    <Content Include="Views\Materials\Index.cshtml" />
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
     <Content Include="Scripts\umd\popper-utils.min.js.map" />
@@ -318,20 +324,8 @@
     <Content Include="Views\Results\Edit.cshtml" />
     <Content Include="Views\Results\Index.cshtml" />
     <Content Include="Views\Results\MyTestResults.cshtml" />
-    <Content Include="Views\Shared\_SalesNav.cshtml" />
-    <Content Include="Views\Shared\_CustNav.cshtml" />
-    <Content Include="Views\Shared\_AdminNav.cshtml" />
-    <Content Include="Views\Home\LabInfo.cshtml" />
-    <Content Include="Views\Assays\Create.cshtml" />
-    <Content Include="Views\Assays\Delete.cshtml" />
-    <Content Include="Views\Assays\Details.cshtml" />
-    <Content Include="Views\Assays\Edit.cshtml" />
-    <Content Include="Views\Assays\Index.cshtml" />
-    <Content Include="Views\Materials\Create.cshtml" />
-    <Content Include="Views\Materials\Delete.cshtml" />
-    <Content Include="Views\Materials\Details.cshtml" />
-    <Content Include="Views\Materials\Edit.cshtml" />
-    <Content Include="Views\Materials\Index.cshtml" />
+    <Content Include="Views\Admin\ViewReports.cshtml" />
+    <Content Include="Views\Admin\_AllReports.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

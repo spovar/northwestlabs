@@ -16,6 +16,18 @@
     background-size: 100%;
 }
 
+.bd_Catalog {
+    padding-top: 0px;
+    background-image: url(../Graphics/back4.png);
+    background-size: 100%;
+}
+
+.bd_Services {
+    padding-top: 0px;
+    background-image: url(../Graphics/back5.png);
+    background-size: 100%;
+}
+
 div{
     background-color:white;
 }
@@ -246,4 +258,21 @@ p {font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 .servicetab{
     padding:20px;
 
+}
+
+.reportTB {
+    width: 200px;
+    border-color: #28a4a4;
+    border-width:2px;
+    border-radius:4px;
+    border-style:solid;
+}
+
+.spacer{
+    width:90%;
+    height:5px;
+    align-content:center;
+    background-color:lightgray;
+   margin-top:30px;
+    margin-bottom:30px;
 }
