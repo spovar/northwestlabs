@@ -35,6 +35,6 @@ namespace NorthwestLabs.Models
         public IEnumerable<Compounds> compounds { get; set; }
 
         public int CustomerID { get; set; }
-        public IEnumerable<Customers> compounds { get; set; }
+        public IEnumerable<Customer> customer { get; set; }
     }
 }

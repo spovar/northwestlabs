@@ -18,29 +18,15 @@ namespace NorthwestLabs.Controllers
         // GET: Work_Order
         public ActionResult Index()
         {
-            List<Work_Order> woList = db.Work_Order.ToList();
-            foreach (var wo in woList)
-            {
-                List custwoList
-            }
             return View(db.Work_Order.ToList());
         }
 
         public ActionResult MyWorkOrders()
         {
-            return View(db.Work_Order.ToList());
+            var custList = from c in db.Work_Order select c;
+            custList = custList.Where(c => c.CustomerID == 1);
+            return View(custList);
         }
-
-        /*Index()
-	{
-		List<Faculty> mylist = db.Faculties.ToList();
-
-		foreach (var faculty in mylist) {
-			faculty.subject = db.Database.SqlQuery<Subject>("SELECT SubjectName FROM Subjects INNER JOIN Faculty_Subjects ON Faculty_Subjects.SubjectID = Subjects.SubjectID WHERE StaffID = " + faculty.StaffID);
-		}
-
-		return View(mylist);
-	}*/
 
         // GET: Work_Order/Details/5
         public ActionResult Details(int? id)
