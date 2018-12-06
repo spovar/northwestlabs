@@ -16,12 +16,16 @@ namespace NorthwestLabs.Models
         [HiddenInput(DisplayValue = false)]
         public int LTNumber { get; set; }
 
+        [Display(Name = "Molecular Mass")]
         public float molecularMass { get; set; }
 
+        [Display(Name = "Compound Name")]
         public string compoundName { get; set; }
 
+        [Display(Name = "Appearance")]
         public string Appearance { get; set; }
 
+        [Display(Name = "Max Tolerable Dose")]
         public float maxTolerableDose { get; set; }
     }
 }
