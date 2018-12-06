@@ -134,8 +134,6 @@ namespace NorthwestLabs.Controllers
                 assay.tests = db.Database.SqlQuery<Test>("SELECT * FROM Test INNER JOIN Test_Assay ON Test.TestID = Test_Assay.TestID WHERE Test_Assay.AssayID = " + assay.AssayID);
                 ViewBag.materials = db.Database.SqlQuery<Material>("SELECT * FROM Materials");
             }
-
-
             return View(myAssays);
         }
     }
