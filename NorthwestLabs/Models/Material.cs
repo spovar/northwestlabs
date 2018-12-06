@@ -19,6 +19,6 @@ namespace NorthwestLabs.Models
 
         public double materialsCost { get; set; }
 
-        public ICollection<Test> tests { get; set; }
+        public IEnumerable<Test> tests { get; set; }
     }
 }

@@ -1,0 +1,47 @@
+﻿@model IEnumerable<NorthwestLabs.Models.Assay>
+
+@{
+    ViewBag.Title = "Catalog";
+}
+
+<h2>Catalog</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Assay Description
+        </th>
+        <th>
+            Tests
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.assayDescription)
+        </td>
+        <td>
+        @foreach (var item2 in item.tests)
+        {
+            @Html.DisplayFor(modelItem => item2.testName) <br />
+        }
+        </td>
+    </tr>
+    }
+</table>
+<table class="table">
+    <tr>
+        <th>
+            Materials
+        </th>
+    </tr>
+    @foreach (var item in ViewBag.materials)
+    {
+        <tr>
+            <td>
+                @item.materialsDescription
+            </td>           
+        </tr>
+    }
+</table>

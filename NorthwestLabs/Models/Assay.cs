@@ -18,6 +18,7 @@ namespace NorthwestLabs.Models
         [Display(Name = "Description")]
         public string assayDescription { get; set; }
 
-        public ICollection<Test> test { get; set; }
+        public IEnumerable<Test> tests { get; set; }
+        public IEnumerable<Material> materials { get; set; }
     }
 }

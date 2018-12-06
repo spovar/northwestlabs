@@ -13,7 +13,7 @@ namespace NorthwestLabs.Models
     {
         [Key]
         [HiddenInput(DisplayValue = false)]
-        public int TestID { get; set; }
+        public int? TestID { get; set; }
 
         [Display(Name = "Name")]
         public string testName { get; set; }
@@ -24,7 +24,7 @@ namespace NorthwestLabs.Models
         [Display(Name = "Base Cost")]
         public double baseCost { get; set; }
 
-        public ICollection<Assay> assays { get; set; }
-        public ICollection<Material> materials { get; set; }
+        public IEnumerable<Assay> assays { get; set; }
+        public IEnumerable<Material> materials { get; set; }
     }
 }
