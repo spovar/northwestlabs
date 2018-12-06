@@ -296,6 +296,7 @@
     <Content Include="Views\Test_Assay\Details.cshtml" />
     <Content Include="Views\Test_Assay\Edit.cshtml" />
     <Content Include="Views\Test_Assay\Index.cshtml" />
+    <Content Include="Views\Home\Services.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
