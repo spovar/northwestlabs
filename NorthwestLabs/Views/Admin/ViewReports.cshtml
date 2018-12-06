@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "ViewReports";
+}
+
+<h2>View Reports</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        
+        <div class="col-md-10">
+            <input type="number" class="form-control" placeholder="Enter Order ID" id="search-fld" name="id">
+        </div>
+    </div>
+    <div class="form-group">
+        
+        <div class="col-md-10">
+            <input type="checkbox" name="chkeco" value="true" checked="checked"> Show Invoices?<br>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Search" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+
+@if (ViewBag.Load != null)
+{
+
+}
+else if (ViewBag.OrderNum == null)
+{
+    <p> <span class="text-danger alert-danger" width="100%" style="padding:10px; border-radius:10px;"> Invalid Order ID </span></p>
+    }
+    else
+    {
+    @Html.Partial("_AllReports")
+    }
