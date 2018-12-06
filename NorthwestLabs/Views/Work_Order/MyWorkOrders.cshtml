@@ -1,0 +1,60 @@
+﻿@model IEnumerable<NorthwestLabs.Models.Work_Order>
+
+@{
+    ViewBag.Title = "MyWorkOrders";
+}
+
+<h2>My Work Orders</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dateArrived)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dateDue)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.custWeight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.actualWeight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dateArrived)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dateDue)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.custWeight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.actualWeight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantity)
+        </td>
+    </tr>
+}
+
+</table>
