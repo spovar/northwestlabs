@@ -13,11 +13,10 @@ namespace NorthwestLabs.Models
     {
 
         [Key]
-        [HiddenInput(DisplayValue = false)]
         public int LTNumber { get; set; }
 
         [Display(Name = "Molecular Mass")]
-        public float molecularMass { get; set; }
+        public double molecularMass { get; set; }
 
         [Display(Name = "Compound Name")]
         public string compoundName { get; set; }
@@ -26,6 +25,6 @@ namespace NorthwestLabs.Models
         public string Appearance { get; set; }
 
         [Display(Name = "Max Tolerable Dose")]
-        public float maxTolerableDose { get; set; }
+        public double maxTolerableDose { get; set; }
     }
 }

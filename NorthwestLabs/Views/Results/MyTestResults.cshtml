@@ -1,0 +1,49 @@
+﻿@model IEnumerable<NorthwestLabs.Models.Results>
+
+@{
+    ViewBag.Title = "MyTestResults";
+}
+
+<h2>My Test Results</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Compound Name
+        </th>
+        <th>
+            Test Performed
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Result)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comments)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @foreach (var item2 in item.compound)
+            {
+                @Html.DisplayFor(modelItem => item2.compoundName)
+            }
+        </td>
+        <td>
+            @foreach (var item3 in item.test)
+            {
+                @Html.DisplayFor(modelItem => item3.testName)
+            }
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Result)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comments)
+        </td>
+    </tr>
+    }
+</table>
