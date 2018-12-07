@@ -14,6 +14,7 @@ namespace NorthwestLabs.Controllers
     [Authorize(Roles = "Admin")]
     public class CustomersController : Controller
     {
+        Random random = new Random();
         private NorthwestLabsContext db = new NorthwestLabsContext();
 
         // GET: Customers
@@ -48,13 +49,25 @@ namespace NorthwestLabs.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "customerID,firstName,lastName,companyName,streetAddress,city,state,zip,email,phone,discountRate")] Customer customer)
+        public ActionResult Create([Bind(Include = "CustomerID,firstName,lastName,Company,Address,City,State,Zip,Email,Phone,discountRate")] Customer customer)
         {
             if (ModelState.IsValid)
             {
                 db.Customers.Add(customer);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+
+                Session["CustomerID"] = customer.CustomerID;
+                /*Work_Order work = new Work_Order();
+                work.CustomerID = customer.CustomerID;
+                db.Work_Order.Add(work);
+                db.SaveChanges();
+                
+                work = db.Work_Order.ElementAt(4);
+                */
+             //   work.OrderID = db.Database.SqlQuery<Work_Order>("SELECT MAX(OrderID) FROM Work_Order WHERE CustomerID = " + work.CustomerID);
+
+
+                return RedirectToAction("EnterCompound");
             }
 
             return View(customer);
@@ -117,6 +130,46 @@ namespace NorthwestLabs.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult EnterCompound()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EnterCompound(string compName, float compWeight, int compQuant)
+        {
+
+            Work_Order work = new Work_Order();
+            work.custWeight = compWeight;
+            work.Quantity = compQuant;
+
+            ViewBag.whatever = Session["CustomerID"];
+            work.CustomerID = ViewBag.whatever;
+
+            work.LTNumber = random.Next(100000, 999999);
+
+
+            Compounds comp = new Compounds();
+
+            comp.LTNumber = work.LTNumber;
+            comp.compoundName = compName;
+
+            db.Work_Order.Add(work);
+            db.Compounds.Add(comp);
+
+            db.SaveChanges();
+
+
+            Session["CompNames"] = comp.compoundName;
+            ViewBag.compoundName = comp.compoundName;
+            return RedirectToAction("EnterAssay");
+
+        }    
+
+
+
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -125,5 +178,11 @@ namespace NorthwestLabs.Controllers
             }
             base.Dispose(disposing);
         }
+
+
+
+
+
+
     }
 }

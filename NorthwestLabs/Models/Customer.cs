@@ -14,7 +14,7 @@ namespace NorthwestLabs.Models
     {
         [Key]
         [HiddenInput(DisplayValue = false)]
-        public int customerID { get; set; }
+        public int CustomerID { get; set; }
 
         [Required(ErrorMessage = "The First Name is required.")]
         [StringLength(255, MinimumLength = 8, ErrorMessage = "Please enter your first name.")]
@@ -29,32 +29,32 @@ namespace NorthwestLabs.Models
         [Required(ErrorMessage = "The company name is required.")]
         [StringLength(255, MinimumLength = 3, ErrorMessage = "Please enter the company name.")]
         [DisplayName("Company Name")]
-        public string companyName { get; set; }
+        public string Company { get; set; }
 
         [Required(ErrorMessage = "The street address is required.")]
         [DisplayName("Street Address")]
-        public string streetAddress { get; set; }
+        public string Address { get; set; }
 
         [Required(ErrorMessage = "The city is required.")]
         [DisplayName("City")]
-        public string city { get; set; }
+        public string City { get; set; }
 
         [Required(ErrorMessage = "The state is required.")]
         [DisplayName("State")]
-        public string state { get; set; }
+        public string State { get; set; }
 
         [Required(ErrorMessage = "The zip code is required.")]
         [RegularExpression(@"^\d{5}([\-]\d{4})?$")]
         [DisplayName("Zip Code")]
-        public int zip { get; set; }
+        public int Zip { get; set; }
 
         [RegularExpression(@"^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$", ErrorMessage = "Please Enter Correct Email Address")]
         [DisplayName("Email Address")]
-        public string email { get; set; }
+        public string Email { get; set; }
 
         [RegularExpression(@"((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}")]
         [DisplayName("Phone Number")]
-        public int phone { get; set; }
+        public string Phone { get; set; }
 
         [Range(0, 75)]
         [HiddenInput(DisplayValue = false)]
