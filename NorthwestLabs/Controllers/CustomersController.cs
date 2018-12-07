@@ -166,7 +166,50 @@ namespace NorthwestLabs.Controllers
 
         }    
 
+        public ActionResult EnterAssay()
+        {
+            List<Assay> assay =  db.Assays.ToList();
+            Order_Details orderdeets = new Order_Details();
 
+            foreach(var item in assay)
+            {
+                orderdeets.AssayID = item.AssayID;
+                orderdeets.OrderID = ??????????
+                db.Order_Details.Add();
+                db.SaveChanges();
+            }
+
+            return View(db.Order_Details.ToList());
+        }
+
+        [HttpPost]
+        public ActionResult EnterAssay(bool? happy)
+        {
+           // var orderNum = db.Work_Order.Find(id);
+
+            if (orderNum != null)
+            {
+
+
+                bool Economy = chkeco ?? false;
+                if (Economy)
+                {
+                    ViewBag.Invoice = "True";
+                }
+                else
+                {
+                    ViewBag.Invoice = null;
+                }
+
+
+                ViewBag.OrderNum = orderNum.OrderID;
+                return View();
+
+            }
+            ViewBag.Load = null;
+            ViewBag.OrderNum = null;
+            return View();
+        }
 
 
         protected override void Dispose(bool disposing)

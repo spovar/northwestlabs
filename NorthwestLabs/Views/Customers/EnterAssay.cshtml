@@ -1,10 +1,39 @@
-﻿
+﻿@model IEnumerable<NorthwestLabs.Models.Order_Details>
+
 @{
     ViewBag.Title = "EnterAssay";
 }
 
-<h2>EnterAssay</h2>
+
+<h2>Select Assay</h2>
 
 <p>Compound:</p>@ViewBag.compoundName
 
 
+<div class="form-group">
+
+    <div class="col-md-10">
+        
+    </div>
+</div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.assays.assayDescription)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    { int i++;
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.assays.assayDescription)
+            </td>
+            <td>
+                <input type="checkbox" name="happy" value="true"> Show Invoices?<br>
+            </td>
+        </tr>
+    }
+
+</table>
