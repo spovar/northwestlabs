@@ -1,0 +1,42 @@
+﻿@model IEnumerable<NorthwestLabs.Models.Assay>
+
+@{
+    ViewBag.Title = "Quote";
+}
+
+<h2>Quote Generator</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <h2>Quote Generator</h2>
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            Choose an Assay
+            <div class="col-md-offset-2 col-md-10">
+                @foreach (var item in Model)
+                {
+                    <input type="radio" name="ID" class="btn btn-default" value="@Html.DisplayFor(modelItem => item.AssayID)"/> @Html.DisplayFor(modelItem => item.assayDescription)
+                    <br />
+                }
+            </div>
+        </div>
+        <br />
+        Enter the weight in mg:
+        <div class=" = "form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="number" class="form-control" placeholder="0" name="weight">
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Submit" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+@ViewBag.value

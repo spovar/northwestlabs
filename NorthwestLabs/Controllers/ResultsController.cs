@@ -21,11 +21,13 @@ namespace NorthwestLabs.Controllers
             List<Results> resultslist = db.Results.ToList();
 
             foreach (var r2 in resultslist) {
+                //SQL query to join compounds and results
                 r2.compound = db.Database.SqlQuery<Compounds>("SELECT DISTINCT Compounds.LTNumber, Compounds.compoundName FROM Compounds INNER JOIN Results ON Compounds.LTNumber = Results.LTNumber WHERE Results.LTNumber = " + r2.LTNumber);
             }
 
             foreach (var r3 in resultslist)
             {
+                //SQL query to join test and results
                 r3.test = db.Database.SqlQuery<Test>("SELECT * FROM Test INNER JOIN Results on Results.TestID = Test.TestID WHERE Test.TestID = " + r3.TestID);
             }
             return View(resultslist);

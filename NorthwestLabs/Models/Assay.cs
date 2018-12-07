@@ -12,7 +12,6 @@ namespace NorthwestLabs.Models
     public class Assay
     {
         [Key]
-        [HiddenInput(DisplayValue = false)]
         public int AssayID { get; set; }
 
         [Display(Name = "Description")]

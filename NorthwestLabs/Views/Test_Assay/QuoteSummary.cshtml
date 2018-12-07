@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "QuoteSummary";
+}
+
+<h2>Quote Summary</h2>
+
+<table class="table col-md-4">
+    <tbody>
+        <tr>
+            <td>Date</td>
+            <td>@DateTime.Now</td>
+        </tr>
+        <tr>
+            <td>Assay Name</td>
+            <td>@ViewBag.assay</td>
+        </tr>
+        <tr>
+            <td>Weight (mg)</td>
+            <td>$@ViewBag.weight</td>
+        </tr>
+        <tr>
+            <td>Base Cost</td>
+            <td>$@ViewBag.basecost</td>
+        </tr>
+        <tr>
+            <td>Sum of Test Costs</td>
+            <td>$@ViewBag.testcost</td>
+        </tr>
+        <tr>
+            <td>Extra Weight Cost</td>
+            <td>$@ViewBag.weightcost</td>
+        </tr>
+        <tr>
+            <td><em>Total Cost</em></td>
+            <td><em>$@ViewBag.totalcost </em></td>
+        </tr>
+    </tbody>
+</table>
