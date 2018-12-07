@@ -7,7 +7,7 @@
 <h2>My Work Orders</h2>
 
 <table class="table">
-    <tr>
+    <tr class="formtext" style="font-size:18px;">
         <th>
             @Html.DisplayNameFor(model => model.OrderID)
         </th>
@@ -32,7 +32,7 @@
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
+    <tr class="formtext" style="font-size:14px;">
         <td>
             @Html.DisplayFor(modelItem => item.OrderID)
         </td>

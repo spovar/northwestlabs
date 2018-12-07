@@ -17,7 +17,7 @@ namespace NorthwestLabs.Controllers
         private NorthwestLabsContext db = new NorthwestLabsContext();
 
         // GET: Work_Order
-        public ActionResult Index()
+        public ActionResult AllOrders()
         {
             return View(db.Work_Order.ToList());
         }

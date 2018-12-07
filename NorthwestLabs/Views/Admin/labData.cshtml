@@ -4,9 +4,9 @@
     ViewBag.Title = "labData";
 }
 
-<table class="table">
-    <tr>
-        <th>
+<table class="table col-lg-12">
+    <tr class="formtext" style="font-size:18px;">
+        <th class="formtext" style="font-size:18px;">
             @Html.DisplayNameFor(model => model.OrderID)
         </th>
         <th>
@@ -40,7 +40,7 @@
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
+    <tr class="formtext" style="font-size:14px;">
         <td>
             @Html.DisplayFor(modelItem => item.OrderID)
         </td>
@@ -74,7 +74,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.CustomerID)
         </td>*@
-        <td>
+        <td style="font-size:12px;">
             @Html.ActionLink("Enter Actual Weight", "enterWeight", new { id = item.OrderID })
         </td>
     </tr>

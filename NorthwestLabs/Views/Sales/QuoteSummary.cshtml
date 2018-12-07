@@ -5,33 +5,33 @@
 
 <h2>Quote Summary</h2>
 
-<table class="table col-md-4">
+<table class="table col-md-10">
     <tbody>
-        <tr>
+        <tr class="formtext">
             <td>Date</td>
             <td>@DateTime.Now</td>
         </tr>
-        <tr>
+        <tr class="formtext">
             <td>Assay Name</td>
             <td>@ViewBag.assay</td>
         </tr>
-        <tr>
+        <tr class="formtext">
             <td>Weight (mg)</td>
-            <td>$@ViewBag.weight</td>
+            <td>@ViewBag.weight</td>
         </tr>
-        <tr>
+        <tr class="formtext">
             <td>Base Cost</td>
             <td>$@ViewBag.basecost</td>
         </tr>
-        <tr>
+        <tr class="formtext">
             <td>Sum of Test Costs</td>
             <td>$@ViewBag.testcost</td>
         </tr>
-        <tr>
+        <tr class="formtext">
             <td>Extra Weight Cost</td>
             <td>$@ViewBag.weightcost</td>
         </tr>
-        <tr>
+        <tr class="formtext">
             <td><em>Total Cost</em></td>
             <td><em>$@ViewBag.totalcost </em></td>
         </tr>

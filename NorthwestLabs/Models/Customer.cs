@@ -17,12 +17,12 @@ namespace NorthwestLabs.Models
         public int CustomerID { get; set; }
 
         [Required(ErrorMessage = "The First Name is required.")]
-        [StringLength(255, MinimumLength = 8, ErrorMessage = "Please enter your first name.")]
+        [StringLength(255, MinimumLength = 2, ErrorMessage = "Please enter your first name.")]
         [DisplayName("First Name")]
         public string firstName { get; set; }
 
         [Required(ErrorMessage = "The Last Name is required.")]
-        [StringLength(255, MinimumLength = 8, ErrorMessage = "Please enter your last name.")]
+        [StringLength(255, MinimumLength = 2, ErrorMessage = "Please enter your last name.")]
         [DisplayName("Last Name")]
         public string lastName { get; set; }
 

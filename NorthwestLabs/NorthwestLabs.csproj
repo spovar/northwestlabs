@@ -314,7 +314,7 @@
     <Content Include="Views\Work_Order\Delete.cshtml" />
     <Content Include="Views\Work_Order\Details.cshtml" />
     <Content Include="Views\Work_Order\Edit.cshtml" />
-    <Content Include="Views\Work_Order\Index.cshtml" />
+    <Content Include="Views\Work_Order\AllOrders.cshtml" />
     <Content Include="Views\Customers\Create.cshtml" />
     <Content Include="Views\Customers\Delete.cshtml" />
     <Content Include="Views\Customers\Details.cshtml" />

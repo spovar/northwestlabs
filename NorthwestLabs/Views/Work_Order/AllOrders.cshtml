@@ -4,10 +4,10 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>All Orders</h2>
 
 <table class="table">
-    <tr>
+    <tr class="formtext" style="font-size:16px;">
         <th>
             @Html.DisplayNameFor(model => model.OrderID)
         </th>
@@ -36,7 +36,7 @@
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
+    <tr class="formtext" style="font-size:14px;">
         <td>
             @Html.DisplayFor(modelItem => item.CustomerID)
         </td>
@@ -61,9 +61,9 @@
         <td>
             @Html.DisplayFor(modelItem => item.Quantity)
         </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.OrderID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.OrderID }) |
+        <td style="font-size:10px;">
+            @Html.ActionLink("Update Weight", "Edit", new { id=item.OrderID }) <br />
+            @Html.ActionLink("Details", "Details", new { id=item.OrderID }) <br />
             @Html.ActionLink("Delete", "Delete", new { id=item.OrderID })
         </td>
     </tr>

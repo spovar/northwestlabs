@@ -7,8 +7,8 @@
 <h2>My Test Results</h2>
 
 <table class="table">
-    <tr>
-        <th>
+    <tr class="formtext" style="font-size:18px;">
+        <th width="20%">
             Compound Name
         </th>
         <th>
@@ -25,7 +25,7 @@
 
     @foreach (var item in Model)
     {
-    <tr>
+    <tr class="formtext" style="font-size:14px;">
         <td>
             @foreach (var item2 in item.compound)
             {
