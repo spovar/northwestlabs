@@ -23,23 +23,26 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.testName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.estimatedDays)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.baseCost)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.TestID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.TestID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.TestID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.testName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.estimatedDays)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.baseCost)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.TestID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.TestID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.TestID })
+            </td>
+        </tr>
+    }
 
 </table>
+
+<h4>@Html.ActionLink("Go Back", "LabInfo", "Admin")</h4>

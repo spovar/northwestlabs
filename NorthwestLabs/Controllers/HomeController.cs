@@ -1,4 +1,6 @@
-﻿using System;
+﻿using NorthwestLabs.DAL;
+using NorthwestLabs.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,6 +12,8 @@ namespace NorthwestLabs.Controllers
     //Intex project
     public class HomeController : Controller
     {
+        private NorthwestLabsContext db = new NorthwestLabsContext();
+
         public ActionResult Index()
         {
             return View();
@@ -17,31 +21,37 @@ namespace NorthwestLabs.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "About Us";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Contact Us";
 
             return View();
         }
 
         public ActionResult Services()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Services";
 
             return View();
         }
 
-        [Authorize(Roles = "Admin")]
-        public ActionResult LabInfo()
+        public ActionResult Catalog()
         {
-            ViewBag.Message = "Change Lab Information";
+            List<Assay> myAssays = db.Assays.ToList();
 
-            return View();
+            foreach (var assay in myAssays)
+            {
+                assay.tests = db.Database.SqlQuery<Test>("SELECT * FROM Test INNER JOIN Test_Assay ON Test.TestID = Test_Assay.TestID WHERE Test_Assay.AssayID = " + assay.AssayID);
+                ViewBag.materials = db.Database.SqlQuery<Material>("SELECT * FROM Materials");
+            }
+
+
+            return View(myAssays);
         }
     }
 }
