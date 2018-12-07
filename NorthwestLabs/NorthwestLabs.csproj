@@ -342,6 +342,7 @@
     <Content Include="Views\Tests\Edit.cshtml" />
     <Content Include="Views\Tests\Index.cshtml" />
     <Content Include="Views\Results\labData.cshtml" />
+    <Content Include="Views\Results\enterWeight.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -69,7 +69,7 @@
             @Html.DisplayFor(modelItem => item.custWeight)
         </td>
         <td>
-            <input type="text" name="actualWeight" size="4">
+            @Html.DisplayFor(modelItem => item.actualWeight)
         </td>
         @*<td>
             @Html.DisplayFor(modelItem => item.Quantity)
@@ -78,7 +78,7 @@
             @Html.DisplayFor(modelItem => item.CustomerID)
         </td>*@
         <td>
-            @Html.ActionLink("Submit Compound's Actual Weight", "Submit", new { id = item.OrderID })
+            @Html.ActionLink("Enter Actual Weight", "enterWeight", new { id = item.OrderID })
         </td>
     </tr>
 }

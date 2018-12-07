@@ -20,7 +20,8 @@ namespace NorthwestLabs.Controllers
         {
             List<Results> resultslist = db.Results.ToList();
 
-            foreach (var r2 in resultslist) {
+            foreach (var r2 in resultslist)
+            {
                 r2.compound = db.Database.SqlQuery<Compounds>("SELECT DISTINCT Compounds.LTNumber, Compounds.compoundName FROM Compounds INNER JOIN Results ON Compounds.LTNumber = Results.LTNumber WHERE Results.LTNumber = " + r2.LTNumber);
             }
 
@@ -30,7 +31,7 @@ namespace NorthwestLabs.Controllers
             }
             return View(resultslist);
         }
-        
+
         public ActionResult labData()
         {
             List<Work_Order> compoundList = db.Work_Order.ToList();
@@ -38,8 +39,8 @@ namespace NorthwestLabs.Controllers
             foreach (var c2 in compoundList)
             {
                 c2.compounds = db.Database.SqlQuery<Compounds>("SELECT DISTINCT Compounds.LTNumber, Compounds.compoundName FROM Compounds INNER JOIN Work_Order ON Compounds.LTNumber = Work_Order.LTNumber WHERE Work_Order.LTNumber = " + c2.LTNumber);
-            }    
-            
+            }
+
             return View(compoundList);
         }
 
@@ -163,5 +164,33 @@ namespace NorthwestLabs.Controllers
             }
             base.Dispose(disposing);
         }
+
+
+       
+        public ActionResult enterWeight(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Work_Order work_Order = db.Work_Order.Find(id);
+            if (work_Order == null)
+            {
+                return HttpNotFound();
+            }
+            return View(work_Order);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult enterWeight(int orDErid, float acTual)
+        {
+              db.Work_Order.Find(orDErid).actualWeight = acTual;
+                db.SaveChanges();
+                return RedirectToAction("labData");
+            
+        }
+
+
     }
 }
