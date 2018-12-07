@@ -151,13 +151,13 @@ namespace NorthwestLabs.Controllers
 
             Compounds comp = new Compounds();
 
-            comp.LTNumber = work.LTNumber;
+            //comp.LTNumber = work.LTNumber;
             comp.compoundName = compName;
 
             db.Work_Order.Add(work);
-            db.Compounds.Add(comp);
+            //db.Compounds.Add(comp);
 
-            db.SaveChanges();
+            //db.SaveChanges();
 
 
             Session["CompNames"] = comp.compoundName;

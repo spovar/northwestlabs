@@ -5,7 +5,7 @@
 }
 
 <h2>Quote Generator</h2>
-
+<!---- this view generates quotes based on the test and assay--->
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
@@ -14,8 +14,8 @@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            Choose an Assay
-            <div class="col-md-offset-2 col-md-10">
+            <p style="font-family:'Century Gothic'; font-size:24px; font-weight:bold;">Choose an Assay</p>
+            <div class="col-md-offset-2 col-md-10" style="font-family:'Century Gothic'; font-size:18px;">
                 @foreach (var item in Model)
                 {
                     <input type="radio" name="ID" class="btn btn-default" value="@Html.DisplayFor(modelItem => item.AssayID)"/> @Html.DisplayFor(modelItem => item.assayDescription)
@@ -24,16 +24,16 @@
             </div>
         </div>
         <br />
-        Enter the weight in mg:
+        <p style="font-family:'Century Gothic'; font-size:24px; font-weight:bold;">Enter the weight in mg:</p>
         <div class=" = "form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="number" class="form-control" placeholder="0" name="weight">
+                <input type="number" class="form-control formtext" style="font-size:18px;" step="0.01" placeholder="0" name="weight">
             </div>
         </div>
         <br />
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Submit" class="btn btn-default" />
+                <input type="submit" value="Submit" class="btn btn-outline-info btn-lg"  />
             </div>
         </div>
     </div>

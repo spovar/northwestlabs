@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "EnterCompound";
 }
-
+<!------- this view is the second in the ordering process-->
 <h2>Compound Information:</h2>
 
 
@@ -23,8 +23,8 @@
                 Compound Name:<input type="text" contenteditable="false" class="form-control" name="compName" /><br />
             </div>
             <div class="col-md-10" style="font-size:24px; font-family:Century Gothic">
-                Compound Weight:
-                <input type="number" value="Enter Weight" class="form-control" name="compWeight" /><br />
+                Compound Weight (mg):
+                <input type="number" value="Enter Weight" class="form-control" name="compWeight" step="0.01" /><br />
             </div>
             <div class="col-md-10" style="font-size:24px; font-family:Century Gothic">
                 Compound Quantity:

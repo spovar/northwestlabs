@@ -52,7 +52,7 @@ namespace NorthwestLabs.Models
         [DisplayName("Email Address")]
         public string Email { get; set; }
 
-        [RegularExpression(@"((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}")]
+        [RegularExpression(@"((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}", ErrorMessage = "Please enter a valid phone (XXX)XXX-XXXX")]
         [DisplayName("Phone Number")]
         public string Phone { get; set; }
 
