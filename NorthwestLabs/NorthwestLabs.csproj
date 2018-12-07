@@ -172,6 +172,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AssaysController.cs" />
+    <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -179,7 +180,6 @@
     <Compile Include="Controllers\ResultsController.cs" />
     <Compile Include="Controllers\SalesController.cs" />
     <Compile Include="Controllers\TestsController.cs" />
-    <Compile Include="Controllers\Test_AssayController.cs" />
     <Compile Include="Controllers\Work_OrderController.cs" />
     <Compile Include="DAL\NorthwestLabsContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -303,11 +303,6 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\Test_Assay\Create.cshtml" />
-    <Content Include="Views\Test_Assay\Delete.cshtml" />
-    <Content Include="Views\Test_Assay\Details.cshtml" />
-    <Content Include="Views\Test_Assay\Edit.cshtml" />
-    <Content Include="Views\Test_Assay\Index.cshtml" />
     <Content Include="Views\Home\Services.cshtml" />
     <Content Include="Views\Work_Order\Create.cshtml" />
     <Content Include="Views\Work_Order\Delete.cshtml" />
@@ -319,14 +314,14 @@
     <Content Include="Views\Customers\Details.cshtml" />
     <Content Include="Views\Customers\Edit.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
-    <Content Include="Views\Work_Order\MyWorkOrders.cshtml" />
+    <Content Include="Views\Client\MyWorkOrders.cshtml" />
     <Content Include="Views\Home\Catalog.cshtml" />
     <Content Include="Views\Results\Create.cshtml" />
     <Content Include="Views\Results\Delete.cshtml" />
     <Content Include="Views\Results\Details.cshtml" />
     <Content Include="Views\Results\Edit.cshtml" />
     <Content Include="Views\Results\Index.cshtml" />
-    <Content Include="Views\Results\MyTestResults.cshtml" />
+    <Content Include="Views\Client\MyTestResults.cshtml" />
     <Content Include="Views\Admin\ViewReports.cshtml" />
     <Content Include="Views\Admin\_AllReports.cshtml" />
     <Content Include="Views\Assays\Create.cshtml" />

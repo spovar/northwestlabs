@@ -22,13 +22,6 @@ namespace NorthwestLabs.Controllers
             return View(db.Work_Order.ToList());
         }
 
-        public ActionResult MyWorkOrders()
-        {
-            var custList = from c in db.Work_Order select c;
-            custList = custList.Where(c => c.CustomerID == 1);
-            return View(custList);
-        }
-
         // GET: Work_Order/Details/5
         public ActionResult Details(int? id)
         {

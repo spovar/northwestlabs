@@ -11,6 +11,7 @@ using NorthwestLabs.Models;
 
 namespace NorthwestLabs.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class CustomersController : Controller
     {
         private NorthwestLabsContext db = new NorthwestLabsContext();
