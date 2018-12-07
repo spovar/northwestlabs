@@ -172,13 +172,14 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AssaysController.cs" />
+    <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MaterialsController.cs" />
     <Compile Include="Controllers\ResultsController.cs" />
+    <Compile Include="Controllers\SalesController.cs" />
     <Compile Include="Controllers\TestsController.cs" />
-    <Compile Include="Controllers\Test_AssayController.cs" />
     <Compile Include="Controllers\Work_OrderController.cs" />
     <Compile Include="DAL\NorthwestLabsContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -347,11 +348,17 @@
     <Content Include="Views\Results\enterWeight.cshtml" />
     <Content Include="Views\Customers\EnterCompound.cshtml" />
     <Content Include="Views\Customers\EnterAssay.cshtml" />
+    <Content Include="Views\Client\MyTestResults.cshtml" />
+    <Content Include="Views\Client\MyWorkOrders.cshtml" />
+    <Content Include="Views\Sales\Quote.cshtml" />
+    <Content Include="Views\Sales\QuoteSummary.cshtml" />
+    <Content Include="Views\Admin\enterWeight.cshtml" />
+    <Content Include="Views\Admin\labData.cshtml" />
+    <Content Include="Views\Admin\LabInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Graphics\" />
-    <Folder Include="Views\Compounds\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
