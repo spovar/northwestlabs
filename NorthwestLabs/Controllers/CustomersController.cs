@@ -11,7 +11,6 @@ using NorthwestLabs.Models;
 
 namespace NorthwestLabs.Controllers
 {
-    [Authorize(Roles = "Admin")]
     public class CustomersController : Controller
     {
         Random random = new Random();

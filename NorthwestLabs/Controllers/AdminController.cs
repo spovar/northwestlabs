@@ -60,7 +60,7 @@ namespace NorthwestLabs.Controllers
 
             foreach (var c2 in compoundList)
             {
-                c2.compounds = db.Database.SqlQuery<Compounds>("SELECT DISTINCT Compounds.LTNumber, Compounds.compoundName FROM Compounds INNER JOIN Work_Order ON Compounds.LTNumber = Work_Order.LTNumber WHERE Work_Order.LTNumber = " + c2.LTNumber);
+                c2.compounds = db.Database.SqlQuery<Compounds>("SELECT DISTINCT * FROM Compounds INNER JOIN Work_Order ON Compounds.LTNumber = Work_Order.LTNumber WHERE Work_Order.LTNumber = " + c2.LTNumber);
             }
 
             return View(compoundList);

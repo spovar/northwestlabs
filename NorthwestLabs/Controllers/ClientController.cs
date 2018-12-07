@@ -24,7 +24,7 @@ namespace NorthwestLabs.Controllers
             //Join the compound data to the results data
             foreach (var r2 in resultslist)
             {
-                r2.compound = db.Database.SqlQuery<Compounds>("SELECT DISTINCT Compounds.LTNumber, Compounds.compoundName FROM Compounds INNER JOIN Results ON Compounds.LTNumber = Results.LTNumber WHERE Results.LTNumber = " + r2.LTNumber);
+                r2.compound = db.Database.SqlQuery<Compounds>("SELECT DISTINCT * FROM Compounds INNER JOIN Results ON Compounds.LTNumber = Results.LTNumber WHERE Results.LTNumber = " + r2.LTNumber);
             }
 
             //Join the test data to the results data
