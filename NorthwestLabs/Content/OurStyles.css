@@ -276,3 +276,21 @@ p {font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
    margin-top:30px;
     margin-bottom:30px;
 }
+
+input.largerCheckbox {
+    width: 15px;
+    height: 15px;
+}
+
+.formtext {
+    font-size:24px;
+    font-family:Century Gothic;
+}
+
+.myalert {
+    padding-left:0px;
+    padding: 10px 20px;
+    font-family:'Century Gothic';
+    font-size: 18px;
+    border-radius:3px;
+}

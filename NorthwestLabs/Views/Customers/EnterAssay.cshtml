@@ -1,39 +1,66 @@
-﻿@model IEnumerable<NorthwestLabs.Models.Order_Details>
-
-@{
+﻿@{
     ViewBag.Title = "EnterAssay";
 }
 
 
 <h2>Select Assay</h2>
 
-<p>Compound:</p>@ViewBag.compoundName
+<p class="formtext">Compound: @ViewBag.compoundName</p>
 
-
-<div class="form-group">
-
-    <div class="col-md-10">
-        
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        <div class="col-md-10">
+        </div>
     </div>
-</div>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.assays.assayDescription)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    { int i++;
+    <table class="table">
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.assays.assayDescription)
+
+            @Html.Raw(ViewBag.ErrorMessage)
+            
+
+        </tr>
+        <tr>
+            <td valign="middle" style="font-size:24px; font-family:Century Gothic">
+                <input type="checkbox" class="largerCheckbox form-check-inline" name="assay1" value="true"> Fire Package
+                <abbr title="View assay information"><a href="@Url.Action("Catalog", "Home") " target="_blank"><img src="~/Graphics/QuestionMark.png" width="16" /></a></abbr>
             </td>
-            <td>
-                <input type="checkbox" name="happy" value="true"> Show Invoices?<br>
+            <td align="left"></td>
+            <td width="50%"> 
+            
+            
             </td>
         </tr>
-    }
+        <tr>
+            <td valign="middle" style="font-size:24px; font-family:Century Gothic">
+                <input type="checkbox" class="largerCheckbox form-check-inline" name="assay2" value="true"> Ocean Package
+                <abbr title="View assay information"><a href="@Url.Action("Catalog", "Home") " target="_blank"><img src="~/Graphics/QuestionMark.png" width="16" /></a></abbr>
+            </td>
+            <td align="left"></td>
+            <td width="50%"></td>
+        </tr>
+        <tr>
+            <td valign="middle" style="font-size:24px; font-family:Century Gothic">
+                <input type="checkbox" class="largerCheckbox form-check-inline" name="assay3" value="true"> Space Package
+                <abbr title="View assay information"><a href="@Url.Action("Catalog", "Home") " target="_blank"><img src="~/Graphics/QuestionMark.png" width="16" /></a></abbr>
+            </td>
+            <td align="left"></td>
+            <td width="50%"></td>
+        </tr>
+        <tr>
+            <td valign="middle" style="font-size:24px; font-family:Century Gothic">
+                <input type="checkbox" class="largerCheckbox form-check-inline" name="assay3" value="true"> Universal Package
+                <abbr title="View assay information"><a href="@Url.Action("Catalog", "Home") " target="_blank"><img src="~/Graphics/QuestionMark.png" width="16" /></a></abbr>
+            </td>
+            <td align="left"></td>
+            <td width="50%"></td>
+        </tr>
 
-</table>
+
+
+    </table>
+    <input type="submit" value="Order" class="btn btn-lg btn-outline-info" />
+
+}

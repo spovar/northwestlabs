@@ -46,7 +46,7 @@ namespace NorthwestLabs.Models
         [Required(ErrorMessage = "The zip code is required.")]
         [RegularExpression(@"^\d{5}([\-]\d{4})?$")]
         [DisplayName("Zip Code")]
-        public int Zip { get; set; }
+        public string Zip { get; set; }
 
         [RegularExpression(@"^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$", ErrorMessage = "Please Enter Correct Email Address")]
         [DisplayName("Email Address")]
@@ -58,6 +58,6 @@ namespace NorthwestLabs.Models
 
         [Range(0, 75)]
         [HiddenInput(DisplayValue = false)]
-        public float discountRate { get; set; }
+        public double discountRate { get; set; }
     }
 }

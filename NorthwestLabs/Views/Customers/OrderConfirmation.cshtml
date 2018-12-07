@@ -1,0 +1,54 @@
+﻿
+@model NorthwestLabs.Models.Customer
+
+@{
+    ViewBag.Title = "Order Confirmation";
+}
+
+<h2>Order Confirmation</h2>
+<p style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:20px;" >
+    <span style="font-size:40px;">Thank you for your order @Model.firstName!</span><br /><br />
+
+    Your shipping labels have been sent to <b>@Model.Email</b>. <br />Please print the attached label and mail the compounds to <em>28 Ayer Rajah Crescent, Singapore 139959. </em><br /><br />
+    You will be notified when they have been recieved. <br /><br /><br />
+</p>
+
+<table style="font-family:'Century Gothic'; font-size:24px; border-top-style:dotted" align="center">
+    <tbody>
+        <tr style="padding-right:10px; border-bottom-style:outset; border-top-style:dotted">
+            <th>Customer Name:</th><td width="10px">&nbsp;</td>
+            <td>@Model.firstName @Model.lastName</td>
+        </tr>
+        <tr style="padding-right:10px; border-bottom-style:outset">
+            <th>Customer Address:</th><td width="10px">&nbsp;</td>
+            <td>@Model.Address @Model.City, @Model.State @Model.Zip</td>
+        </tr>
+        <tr style="padding-right:10px; border-bottom-style:outset">
+            <th>Compound Name:</th><td width="10px">&nbsp;</td>
+            <td>@ViewBag.compoundName</td>
+        </tr>
+        <tr  style="padding-right:10px; border-bottom-style:outset;">
+            <th>Assays:</th><td width="10px" style="padding-top:10px;">&nbsp;</td>
+            <td style="font-family:'Century Gothic'; font-size:24px;">
+                @if (ViewBag.assay1 == "True")
+                {
+                    <p style="font-family:'Century Gothic'; font-size:24px;">Fire Package</p>
+                }
+                @if (ViewBag.assay2 == "True")
+                {
+                    <p style="font-family:'Century Gothic'; font-size:24px;">Ocean Package</p>
+                }
+                @if (ViewBag.assay3 == "True")
+                {
+                    <p style="font-family:'Century Gothic'; font-size:24px;">Space Package</p>
+                }
+                @if (ViewBag.assay4 == "True")
+                {
+                    <p style="font-family:'Century Gothic'; font-size:24px;">Universal Package</p>
+                }
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+

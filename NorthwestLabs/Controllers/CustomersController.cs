@@ -146,7 +146,7 @@ namespace NorthwestLabs.Controllers
             ViewBag.whatever = Session["CustomerID"];
             work.CustomerID = ViewBag.whatever;
 
-            work.LTNumber = random.Next(100000, 999999);
+           // work.LTNumber = random.Next(100000, 999999);
 
 
             Compounds comp = new Compounds();
@@ -168,47 +168,49 @@ namespace NorthwestLabs.Controllers
 
         public ActionResult EnterAssay()
         {
-            List<Assay> assay =  db.Assays.ToList();
-            Order_Details orderdeets = new Order_Details();
+            ViewBag.compoundName = Session["CompNames"];
 
-            foreach(var item in assay)
-            {
-                orderdeets.AssayID = item.AssayID;
-                orderdeets.OrderID = ??????????
-                db.Order_Details.Add();
-                db.SaveChanges();
-            }
-
-            return View(db.Order_Details.ToList());
+          return View();
         }
 
         [HttpPost]
-        public ActionResult EnterAssay(bool? happy)
+        public ActionResult EnterAssay(bool? assay1, bool? assay2, bool? assay3, bool? assay4)
         {
-           // var orderNum = db.Work_Order.Find(id);
 
-            if (orderNum != null)
-            {
-
-
-                bool Economy = chkeco ?? false;
-                if (Economy)
-                {
-                    ViewBag.Invoice = "True";
-                }
-                else
-                {
-                    ViewBag.Invoice = null;
-                }
-
-
-                ViewBag.OrderNum = orderNum.OrderID;
+            if (assay1 == null && assay2 == null && assay3 == null && assay4 == null){
+                ViewBag.ErrorMessage = "<p align =\"center\" class=\"alert-danger myalert\" style=\"padding: 10px 20px; font - family:'Century Gothic'; font-size: 18px; border - radius:3px; \">Please Select an Assay</p></td>";
                 return View();
-
             }
-            ViewBag.Load = null;
-            ViewBag.OrderNum = null;
-            return View();
+            //check if they want assay 1
+            bool Economy = assay1 ?? false;
+            if (Economy)
+            {
+                ViewBag.assay1 = "True";
+            }
+            //check if they want assay 2
+            bool Economy2 = assay2 ?? false;
+            if (Economy2)
+            {
+                ViewBag.assay2 = "True";
+            }
+            //check if they want assay 2
+            bool Economy3 = assay3 ?? false;
+            if (Economy3)
+            {
+                ViewBag.assay3 = "True";
+            }
+            //check if they want assay 2
+            bool Economy4 = assay4 ?? false;
+            if (Economy4)
+            {                ViewBag.assay4 = "True";
+            }
+
+
+            ViewBag.compoundName = Session["CompNames"];
+            Customer theCust =  db.Customers.Find(Session["CustomerID"]);
+
+
+            return View("OrderConfirmation", theCust);
         }
 
 

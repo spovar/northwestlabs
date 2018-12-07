@@ -13,7 +13,7 @@ namespace NorthwestLabs.Models
     {
 
         [Key]
-        public int LTNumber { get; set; }
+        public int? LTNumber { get; set; }
 
         [Display(Name = "Molecular Mass")]
         public double molecularMass { get; set; }
