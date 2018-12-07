@@ -13,6 +13,7 @@ namespace NorthwestLabs.Controllers
 {
     public class CustomersController : Controller
     {
+        Random random = new Random();
         private NorthwestLabsContext db = new NorthwestLabsContext();
 
         // GET: Customers
@@ -54,15 +55,15 @@ namespace NorthwestLabs.Controllers
                 db.Customers.Add(customer);
                 db.SaveChanges();
 
-                Work_Order work = new Work_Order();
+                Session["CustomerID"] = customer.CustomerID;
+                /*Work_Order work = new Work_Order();
                 work.CustomerID = customer.CustomerID;
                 db.Work_Order.Add(work);
                 db.SaveChanges();
-
-                work.OrderID = db.Database.SqlQuery("")
-
-                ViewBag.WorkOrderID = work;
-
+                
+                work = db.Work_Order.ElementAt(4);
+                */
+             //   work.OrderID = db.Database.SqlQuery<Work_Order>("SELECT MAX(OrderID) FROM Work_Order WHERE CustomerID = " + work.CustomerID);
 
 
                 return RedirectToAction("EnterCompound");
@@ -128,35 +129,42 @@ namespace NorthwestLabs.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult EnterCompound(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Work_Order work_Order = db.Work_Order.Find(id);
-            if (work_Order == null)
-            {
-                return HttpNotFound();
-            }
-            return View(work_Order);
-        }
-
-    /*    [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult EnterCompound()
         {
-            db.Work_Order.Find(orDErid).actualWeight = acTual;
-            db.SaveChanges();
-            return RedirectToAction("labData");
-
+            return View();
         }
 
-    */
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EnterCompound(string compName, float compWeight, int compQuant)
+        {
+
+            Work_Order work = new Work_Order();
+            work.custWeight = compWeight;
+            work.Quantity = compQuant;
+
+            ViewBag.whatever = Session["CustomerID"];
+            work.CustomerID = ViewBag.whatever;
+
+            work.LTNumber = random.Next(100000, 999999);
 
 
+            Compounds comp = new Compounds();
+
+            comp.LTNumber = work.LTNumber;
+            comp.compoundName = compName;
+
+            db.Work_Order.Add(work);
+            db.Compounds.Add(comp);
+
+            db.SaveChanges();
 
 
+            Session["CompNames"] = comp.compoundName;
+            ViewBag.compoundName = comp.compoundName;
+            return RedirectToAction("EnterAssay");
+
+        }    
 
 
 
