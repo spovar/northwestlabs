@@ -237,6 +237,7 @@
     <Content Include="Scripts\esm\popper.js.map" />
     <Content Include="Scripts\esm\popper-utils.min.js.map" />
     <Content Include="Scripts\esm\popper-utils.js.map" />
+    <None Include="Properties\PublishProfiles\NwLabsOrderManagementSystem - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -304,11 +305,6 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\Test_Assay\Create.cshtml" />
-    <Content Include="Views\Test_Assay\Delete.cshtml" />
-    <Content Include="Views\Test_Assay\Details.cshtml" />
-    <Content Include="Views\Test_Assay\Edit.cshtml" />
-    <Content Include="Views\Test_Assay\Index.cshtml" />
     <Content Include="Views\Home\Services.cshtml" />
     <Content Include="Views\Work_Order\Create.cshtml" />
     <Content Include="Views\Work_Order\Delete.cshtml" />
@@ -320,14 +316,11 @@
     <Content Include="Views\Customers\Details.cshtml" />
     <Content Include="Views\Customers\Edit.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
-    <Content Include="Views\Work_Order\MyWorkOrders.cshtml" />
-    <Content Include="Views\Assays\Catalog.cshtml" />
     <Content Include="Views\Results\Create.cshtml" />
     <Content Include="Views\Results\Delete.cshtml" />
     <Content Include="Views\Results\Details.cshtml" />
     <Content Include="Views\Results\Edit.cshtml" />
     <Content Include="Views\Results\Index.cshtml" />
-    <Content Include="Views\Results\MyTestResults.cshtml" />
     <Content Include="Views\Admin\ViewReports.cshtml" />
     <Content Include="Views\Admin\_AllReports.cshtml" />
     <Content Include="Views\Assays\Create.cshtml" />
@@ -335,7 +328,6 @@
     <Content Include="Views\Assays\Details.cshtml" />
     <Content Include="Views\Assays\Edit.cshtml" />
     <Content Include="Views\Assays\Index.cshtml" />
-    <Content Include="Views\Home\LabInfo.cshtml" />
     <Content Include="Views\Shared\_AdminNav.cshtml" />
     <Content Include="Views\Shared\_CustNav.cshtml" />
     <Content Include="Views\Shared\_SalesNav.cshtml" />
@@ -344,8 +336,6 @@
     <Content Include="Views\Tests\Details.cshtml" />
     <Content Include="Views\Tests\Edit.cshtml" />
     <Content Include="Views\Tests\Index.cshtml" />
-    <Content Include="Views\Results\labData.cshtml" />
-    <Content Include="Views\Results\enterWeight.cshtml" />
     <Content Include="Views\Customers\EnterCompound.cshtml" />
     <Content Include="Views\Customers\EnterAssay.cshtml" />
     <Content Include="Views\Client\MyTestResults.cshtml" />
