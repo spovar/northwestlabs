@@ -11,130 +11,108 @@ using NorthwestLabs.Models;
 
 namespace NorthwestLabs.Controllers
 {
-    public class AssaysController : Controller
+    [Authorize(Roles ="Admin")]
+    public class TestsController : Controller
     {
         private NorthwestLabsContext db = new NorthwestLabsContext();
 
-
-        public ActionResult Catalog()
-        {
-            List<Assay> myAssays = db.Assays.ToList();
-
-            foreach (var assay in myAssays)
-            {
-                assay.tests = db.Database.SqlQuery<Test>("SELECT * FROM Test INNER JOIN Test_Assay ON Test.TestID = Test_Assay.TestID WHERE Test_Assay.AssayID = " + assay.AssayID);
-                ViewBag.materials = db.Database.SqlQuery<Material>("SELECT * FROM Materials");
-            }
-
-
-            return View(myAssays);
-        }
-
-        [Authorize(Roles = "Admin")]
-        // GET: Assays
+        // GET: Tests
         public ActionResult Index()
         {
-            return View(db.Assays.ToList());
+            return View(db.Tests.ToList());
         }
 
-        [Authorize(Roles = "Admin")]
-        // GET: Assays/Details/5
+        // GET: Tests/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Assay assay = db.Assays.Find(id);
-            if (assay == null)
+            Test test = db.Tests.Find(id);
+            if (test == null)
             {
                 return HttpNotFound();
             }
-            return View(assay);
+            return View(test);
         }
 
-        [Authorize(Roles = "Admin")]
-        // GET: Assays/Create
+        // GET: Tests/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Assays/Create
+        // POST: Tests/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "AssayID,assayDescription")] Assay assay)
+        public ActionResult Create([Bind(Include = "TestID,testName,estimatedDays,baseCost")] Test test)
         {
             if (ModelState.IsValid)
             {
-                db.Assays.Add(assay);
+                db.Tests.Add(test);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(assay);
+            return View(test);
         }
 
-        // GET: Assays/Edit/5
-        [Authorize(Roles = "Admin")]
+        // GET: Tests/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Assay assay = db.Assays.Find(id);
-            if (assay == null)
+            Test test = db.Tests.Find(id);
+            if (test == null)
             {
                 return HttpNotFound();
             }
-            return View(assay);
+            return View(test);
         }
 
-        // POST: Assays/Edit/5
+        // POST: Tests/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "AssayID,assayDescription")] Assay assay)
+        public ActionResult Edit([Bind(Include = "TestID,testName,estimatedDays,baseCost")] Test test)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(assay).State = EntityState.Modified;
+                db.Entry(test).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(assay);
+            return View(test);
         }
 
-        // GET: Assays/Delete/5
-        [Authorize(Roles = "Admin")]
+        // GET: Tests/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Assay assay = db.Assays.Find(id);
-            if (assay == null)
+            Test test = db.Tests.Find(id);
+            if (test == null)
             {
                 return HttpNotFound();
             }
-            return View(assay);
+            return View(test);
         }
 
-        // POST: Assays/Delete/5
-        [Authorize(Roles = "Admin")]
+        // POST: Tests/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Assay assay = db.Assays.Find(id);
-            db.Assays.Remove(assay);
+            Test test = db.Tests.Find(id);
+            db.Tests.Remove(test);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
