@@ -47,13 +47,25 @@ namespace NorthwestLabs.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "customerID,firstName,lastName,companyName,streetAddress,city,state,zip,email,phone,discountRate")] Customer customer)
+        public ActionResult Create([Bind(Include = "CustomerID,firstName,lastName,Company,Address,City,State,Zip,Email,Phone,discountRate")] Customer customer)
         {
             if (ModelState.IsValid)
             {
                 db.Customers.Add(customer);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+
+                Work_Order work = new Work_Order();
+                work.CustomerID = customer.CustomerID;
+                db.Work_Order.Add(work);
+                db.SaveChanges();
+
+                work.OrderID = db.Database.SqlQuery("")
+
+                ViewBag.WorkOrderID = work;
+
+
+
+                return RedirectToAction("EnterCompound");
             }
 
             return View(customer);
@@ -116,6 +128,39 @@ namespace NorthwestLabs.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult EnterCompound(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Work_Order work_Order = db.Work_Order.Find(id);
+            if (work_Order == null)
+            {
+                return HttpNotFound();
+            }
+            return View(work_Order);
+        }
+
+    /*    [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EnterCompound()
+        {
+            db.Work_Order.Find(orDErid).actualWeight = acTual;
+            db.SaveChanges();
+            return RedirectToAction("labData");
+
+        }
+
+    */
+
+
+
+
+
+
+
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -124,5 +169,11 @@ namespace NorthwestLabs.Controllers
             }
             base.Dispose(disposing);
         }
+
+
+
+
+
+
     }
 }
